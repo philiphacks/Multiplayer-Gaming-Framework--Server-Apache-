@@ -1,0 +1,139 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from GamingService WSDL service -->
+
+  <service name="GamingServiceBindingPort" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.tbs.be/mgf/definitions"/>
+      <parameter name="wsdlServiceElement" value="GamingService"/>
+      <parameter name="schemaQualified" value="http://www.tbs.be/mgf/schemas"/>
+      <parameter name="schemaUnqualified" value="http://www.tbs.be/mgf/definitions"/>
+      <parameter name="wsdlServicePort" value="GamingServiceBindingPort"/>
+      <parameter name="className" value="be.tbs.www.mgf.definitions.GamingServiceBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="GamingService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:StatusProperty"
+        type="java:be.tbs.www.mgf.schemas.StatusProperty"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Message"
+        type="java:be.tbs.www.mgf.schemas.Message"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Pong"
+        type="java:be.tbs.www.mgf.schemas.Pong"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>LeaveRequest"
+        type="java:be.tbs.www.mgf.schemas.LeaveRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Error"
+        type="java:be.tbs.www.mgf.schemas.Error"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:PlayerDescriptor"
+        type="java:be.tbs.www.mgf.schemas.PlayerDescriptor"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Request"
+        type="java:be.tbs.www.mgf.schemas.Request"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>LeaveReply"
+        type="java:be.tbs.www.mgf.schemas.LeaveReply"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>JoinReply"
+        type="java:be.tbs.www.mgf.schemas.JoinReply"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Ping"
+        type="java:be.tbs.www.mgf.schemas.Ping"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>StatusRequest"
+        type="java:be.tbs.www.mgf.schemas.StatusRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>StatusReply"
+        type="java:be.tbs.www.mgf.schemas.StatusReply"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:>JoinRequest"
+        type="java:be.tbs.www.mgf.schemas.JoinRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.tbs.be/mgf/schemas"
+        qname="ns:Reply"
+        type="java:be.tbs.www.mgf.schemas.Reply"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

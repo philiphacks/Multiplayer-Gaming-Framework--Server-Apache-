@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jdo PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
+    "http://java.sun.com/dtd/jdo_2_0.dtd">
+<jdo>
+    <package name="be.tbs.mgf.database.apache.data">
+        <class name="PlayerData">
+            <field
+                  name="playerId"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="name"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="last_stamp"
+                  persistence-modifier="persistent"/>
+        </class>
+		
+		<class name="ScoreData">
+			<field
+				name="key"
+				persistence-modifier="persistent"/>
+			<field
+				name="player"
+				persistence-modifier="persistent"/>
+			<field
+				name="total"
+				persistence-modifier="persistent"/>
+		</class>
+		
+		<class name="SessionData">
+			<field
+				name="isRunning"
+				persistence-modifier="persistent"/>
+			<field
+				name="created"
+				persistence-modifier="persistent"/>
+			<field
+				name="scores"
+				persistence-modifier="persistent"/>
+			<field
+				name="id"
+				persistence-modifier="persistent"/>
+		</class>
+		
+		<class name="StatusData">
+			<field
+				name="timestamp"
+				persistence-modifier="persistent"/>
+			<field
+				name="property"
+				persistence-modifier="persistent"/>
+			<field
+				name="value"
+				persistence-modifier="persistent"/>
+			<field
+				name="player"
+				persistence-modifier="persistent"/>
+		</class>
+    </package>
+</jdo>
